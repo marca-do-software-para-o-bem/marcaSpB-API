@@ -7,4 +7,36 @@ Primeiramente é necessário ter o docker instalado, caso não tenha acesse o [I
 
 ### Utilizando o ambiente
 
+&emsp;&emsp; Para a utilização do ambiente, basta dar o comando abaixo e ele irá ligar o container:
+ 
+ ```terminal
+  docker-compose up -d
+ ```
+
+ &emsp;&emsp; Para a visualização dos logs use o comando abaixo:
+ ```terminal
+  docker-compose logs -f
+ ```
+
+ &emsp;&emsp; Para acessar o container use o comando abaixo:
+ ```terminal
+  docker-compose exec web bash
+ ```
+
+ &emsp;&emsp; Para parar o container use o comando abaixo:
+ 
+  ```terminal
+  docker-compose stop
+ ```
+ &emsp;&emsp; E para religar um container parado use o comando: 
+ 
+ ```terminal
+  docker-compose start
+ ```
+
+ &emsp;&emsp; Caso deseje remover um container:
+ ```terminal
+  docker-compose down
+ ```
+
 [tutorial](https://docs.docker.com/compose/django/)
