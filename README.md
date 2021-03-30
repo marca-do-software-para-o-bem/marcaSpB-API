@@ -13,6 +13,11 @@ Primeiramente é necessário ter o docker instalado, caso não tenha acesse o [I
   docker-compose up -d
  ```
 
+&emsp;&emsp; em caso dos arquivos criados ficarem sem permissão use:
+
+```
+sudo chown -R $USER:$USER .
+```
  &emsp;&emsp; Para a visualização dos logs use o comando abaixo:
  ```terminal
   docker-compose logs -f
