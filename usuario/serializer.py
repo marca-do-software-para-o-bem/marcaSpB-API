@@ -34,5 +34,24 @@ class UserSerializer(serializers.ModelSerializer):
             account.save()
             return user
 
-    def update(self, validated_data):
-        pass
+    def update(self, instance, validated_data):
+        # separa o json do account e sua instancia
+        account_data = validated_data.pop('account')
+        account = instance.account
+
+        # atualiza os dados da model User
+        instance.email = validated_data['email']
+        instance.username = validated_data['username']
+        instance.first_name = validated_data['first_name']
+
+        # atualiza os dados da model Account
+        account.cep= account_data.get('cep')
+        account.endereco= account_data.get('endereco')
+        account.cnpj= account_data.get('cnpj')
+
+        # armazena os dados
+        instance.save()
+        account.save()
+
+        # retorna o json resultante no metodo PUT
+        return instance
